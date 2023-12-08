@@ -43,3 +43,26 @@ resource "azurerm_public_ip" "public_ip" {
 
   depends_on = [azurerm_kubernetes_cluster.aks_esgi]
 }
+
+
+# resource "azurerm_role_assignment" "acr_pull_role" {
+#   scope                = azurerm_container_registry.acr_esgi.id
+#   principal_id         = azurerm_kubernetes_cluster.aks_esgi.identity[0].principal_id
+#   role_definition_name = "AcrPull"
+#   depends_on           = [azurerm_kubernetes_cluster.aks_esgi]
+# }
+
+# // AcrPush
+# resource "azurerm_role_assignment" "acr_push_role" {
+#   scope                = azurerm_container_registry.acr_esgi.id
+#   principal_id         = azurerm_kubernetes_cluster.aks_esgi.identity[0].principal_id
+#   role_definition_name = "AcrPush"
+#   depends_on           = [azurerm_kubernetes_cluster.aks_esgi]
+# }
+
+# resource "azurerm_role_assignment" "acr_pull_role" {
+#   scope                = azurerm_container_registry.acr_main.id
+#   principal_id         = azurerm_kubernetes_cluster.aks_esgi.kubelet_identity.0.object_id
+#   role_definition_name = "AcrPull"
+#   depends_on           = [azurerm_kubernetes_cluster.aks_esgi]
+# }
