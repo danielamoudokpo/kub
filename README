@@ -1,0 +1,30 @@
+## Ecrivez ici les inscriptions et explications pour déployer l'infrastructure et l'application sur Azure
+
+## start minikub
+
+minikube start
+
+## get pods to verifie
+
+kubectl get pods
+
+## login azur in terraform folder
+
+az login
+
+## init project in terraform folder
+
+terraform init
+
+## plan achitercture in terraform folder
+
+terraform plan
+
+## apply change in terraform folder
+
+terraform apply
+
+# Add the ingress-nginx repository
+
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
