@@ -1,0 +1,17 @@
+ 
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flask-ingress
+spec:
+  rules:
+  - host: 20.199.103.213.nip.io #FIXME: Rendre l'IP publique dynamique dans le flask-ingress.yaml
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: flask-app-service
+            port:
+              number: 80
