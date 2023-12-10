@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "rg_esgi" {
 }
 
 resource "azurerm_container_registry" "acr_esgi" {
-  name                = "acrTest${var.student_name}"
+  name                = "acr${var.student_name}"
   resource_group_name = azurerm_resource_group.rg_esgi.name
   location            = azurerm_resource_group.rg_esgi.location
   sku                 = "Standard"
